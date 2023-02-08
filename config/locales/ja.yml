@@ -22,6 +22,7 @@ ja:
       department: 部署
       office: オフィス
       profile: プロフィール
+      article: お知らせ
     attributes:
       employee:
         number: 社員番号
@@ -37,6 +38,8 @@ ja:
         news_posting_auth: お知らせ投稿権限
       profile:
         profile: プロフィール
+      article:
+        title: タイトル
   date:
     formats:
       long: ! '%Y年%-m月%-d日'
