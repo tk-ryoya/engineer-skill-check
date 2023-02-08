@@ -7,13 +7,14 @@
     <thead>
       <tr>
         <th class="name">タイトル</th>
+        <th><%= sort_order "created_at", "公開日" %></th>
       </tr>
     </thead>
     <tbody>
     <% @articles.each do |article| %>
       <tr class="article">
         <th class="name"><%= article.title %></th>
-        <th class="name"><%= article.created_at %></th>
+        <th class="name"><%= l(article.created_at, format: :long) %></th>
       </tr>
     <% end %>
     </tbody>
