@@ -3,6 +3,10 @@
     <p><%= flash.notice %></p>
   <% end %>
 
+  <% if current_user.news_posting_auth %>
+    <p class="new_article"><%= link_to '新規追加', new_article_path, class: 'btn' %></p>
+  <% end %>
+
   <table class="article_table">
     <thead>
       <tr>
@@ -15,6 +19,11 @@
       <tr class="article">
         <th class="name"><%= link_to article.title, article_path(article) %></th>
         <th class="name"><%= l(article.created_at, format: :long) %></th>
+
+        <% if current_user.news_posting_auth && current_user.id == article.author %>
+          <th class="btn_th"><%= link_to '編集', edit_article_path(article), class: 'btn' %></th>
+          <th class="btn_th"><%= link_to '削除', article, method: :delete, data: { confirm: "記事「#{article.title}」を削除します。よろしいですか？" }, class: 'btn' %></th>
+        <% end %>
       </tr>
     <% end %>
     </tbody>
