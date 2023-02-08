@@ -1,0 +1,21 @@
+<div class="article_index">
+  <% if flash.notice.present? %>
+    <p><%= flash.notice %></p>
+  <% end %>
+
+  <table class="article_table">
+    <thead>
+      <tr>
+        <th class="name">タイトル</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @articles.each do |article| %>
+      <tr class="article">
+        <th class="name"><%= article.title %></th>
+        <th class="name"><%= article.created_at %></th>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
