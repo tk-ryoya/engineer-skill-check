@@ -13,7 +13,7 @@
     <tbody>
     <% @articles.each do |article| %>
       <tr class="article">
-        <th class="name"><%= article.title %></th>
+        <th class="name"><%= link_to article.title, article_path(article) %></th>
         <th class="name"><%= l(article.created_at, format: :long) %></th>
       </tr>
     <% end %>
