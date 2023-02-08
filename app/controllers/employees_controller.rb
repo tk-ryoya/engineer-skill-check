@@ -58,7 +58,7 @@ class EmployeesController < ApplicationController
                                      :department_id,
                                      :office_id,
                                      :employee_info_manage_auth,
-                                     :notification_manage_auth)
+                                     :news_posting_auth)
   end
 
   def set_employee
