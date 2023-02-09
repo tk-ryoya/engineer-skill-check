@@ -5,9 +5,13 @@ class ArticlesController < ApplicationController
     @articles = Article.active.order("#{sort_column} #{sort_direction}")
   end
 
+  def show; end
+
   def new
     @article = Article.new
   end
+
+  def edit; end
 
   def create
     @article = Article.new(article_params)
@@ -20,10 +24,6 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def show; end
-
-  def edit; end
-
   def update
     if @article.update(article_params)
       redirect_to articles_url
@@ -34,7 +34,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     ActiveRecord::Base.transaction do
-      now = Time.now
+      now = Time.current
       @article.update_column(:deleted_at, now)
     end
 
@@ -52,10 +52,10 @@ class ArticlesController < ApplicationController
   end
 
   def sort_column
-    params[:sort] ? params[:sort] : 'created_at'
+    params[:sort] || 'created_at'
   end
 
   def sort_direction
-    params[:direction] ? params[:direction] : 'asc'
+    params[:direction] || 'asc'
   end
 end
