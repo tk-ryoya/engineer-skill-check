@@ -1,17 +1,12 @@
 .employee_index {
   .new_employee {
     text-align: right;
-    margin-right: 31px;
-  }
-
-  .btn {
-    border: 1px solid;
-    padding: 3px 5px;
+    margin: 8px 0px;
   }
 
   .employee_table {
     height: fit-content;
-    width: 700px;
+    width: 100%;
     table-layout: fixed;
     margin-top: 20px;
 
@@ -31,10 +26,6 @@
 
     .employee {
       line-height: 30px;
-
-      .btn_th {
-        display: inline-block;
-      }
     }
   }
 }
@@ -74,14 +65,5 @@
       width: fit-content;
       margin-left: 30px;
     }
-  }
-
-  input[type="submit"]{
-    position: absolute;
-    top: -38px;
-    right: 20px;
-    padding: 0px 22px;
-    background-color: white;
-    border: 1px solid;
   }
 }

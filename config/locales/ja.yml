@@ -40,6 +40,7 @@ ja:
         profile: プロフィール
       article:
         title: タイトル
+        content: 内容
   date:
     formats:
       long: ! '%Y年%-m月%-d日'
